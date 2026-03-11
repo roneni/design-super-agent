@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terrasight — Climate data narrative. Explore global temperature anomaly, atmospheric CO2, and sea level rise in clear, authoritative data storytelling." />
+  <meta property="og:title" content="Terrasight — Climate Data Narrative" />
+  <meta property="og:description" content="The data is clear. Global temperature anomaly +1.48°C above pre-industrial average." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0c1117" />
+  <title>Terrasight — Climate Data Narrative</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <header>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="#" class="nav-brand" aria-label="Terrasight home">Terrasight</a>
+      <a href="#about" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 1: HERO
+         ============================================================ -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <p class="hero-label" aria-label="Metric: Global Temperature Anomaly">
+        Global Temperature Anomaly
+      </p>
+
+      <div aria-live="polite" aria-atomic="true">
+        <h1 class="hero-temp data-number" id="hero-heading">
+          <span id="hero-temp-value" aria-label="Plus 1.48 degrees">+1.48</span><span class="hero-temp-suffix" aria-hidden="true">°C</span>
+        </h1>
+      </div>
+
+      <p class="hero-subtitle">
+        Above pre-industrial average. Updated March 2026.
+      </p>
+
+      <!-- Scroll indicator: CSS-drawn chevron -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="chevron"></div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 2: CO2 COUNTER
+         ============================================================ -->
+    <section class="co2-section" aria-labelledby="co2-heading">
+      <div class="co2-inner">
+
+        <span class="section-label" id="co2-heading">Atmospheric CO₂</span>
+
+        <p class="co2-stat data-number" aria-label="424 parts per million">424 ppm</p>
+        <p class="co2-stat-label">Parts per million</p>
+
+        <!-- Bar visualization -->
+        <div class="co2-bar-wrap" role="img" aria-label="CO2 concentration bar chart showing pre-industrial level of 280 ppm versus current level of 424 ppm out of a 450 ppm scale">
+          <div class="co2-bar-preindustrial" aria-hidden="true"></div>
+          <div class="co2-bar-current"       aria-hidden="true"></div>
+        </div>
+
+        <div class="co2-markers" aria-hidden="true">
+          <span class="co2-marker">280 ppm &mdash; Pre-industrial</span>
+          <span class="co2-marker co2-marker--current">424 ppm &mdash; Current</span>
+        </div>
+
+        <blockquote class="co2-annotation">
+          Highest level in 4 million years.
+        </blockquote>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         WARMING STRIPES DIVIDER
+         ============================================================ -->
+    <div class="stripes-divider" role="img" aria-label="Warming stripes visualization showing global temperature trend from 1850 to 2024, transitioning from cool blues to deep reds">
+      <img
+        src="public/images/warming-stripes.png"
+        alt="Climate warming stripes: vertical color bands representing annual global temperatures from 1850 to 2024. Cool blues on the left transition to deep reds on the right, illustrating accelerating warming."
+        width="1600"
+        height="200"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+
+    <!-- ============================================================
+         SECTION 3: SEA LEVEL
+         ============================================================ -->
+    <section class="sea-section" aria-labelledby="sea-heading">
+      <div class="sea-inner">
+
+        <span class="section-label" id="sea-heading">Sea Level Rise</span>
+
+        <div class="stat-boxes">
+
+          <!-- Box 1: Rise since 1900 -->
+          <article class="stat-box stat-box--blue-light" aria-label="Sea level rise since 1900: plus 21 centimetres">
+            <p class="stat-box-number data-number">+21cm</p>
+            <p class="stat-box-label">Sea Level Rise Since 1900</p>
+          </article>
+
+          <!-- Box 2: Current rate -->
+          <article class="stat-box stat-box--blue-mid" aria-label="Current rate of sea level rise: 3.6 millimetres per year">
+            <p class="stat-box-number data-number">3.6mm/year</p>
+            <p class="stat-box-label">Current Rate of Rise</p>
+          </article>
+
+          <!-- Box 3: Projection -->
+          <article class="stat-box stat-box--blue-deep" aria-label="Projected sea level rise by 2100: plus 0.3 to 1.0 metres">
+            <p class="stat-box-number data-number">+0.3 to 1.0m</p>
+            <p class="stat-box-label">Projected Rise by 2100</p>
+          </article>
+
+        </div>
+
+        <p class="sea-source">Source: NASA Sea Level Change Portal</p>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 4: CALL TO ACTION
+         ============================================================ -->
+    <section class="cta-section" id="about" aria-labelledby="cta-heading">
+      <div class="cta-inner">
+
+        <h2 class="cta-heading" id="cta-heading">
+          The data is clear. The question is what we do&nbsp;with&nbsp;it.
+        </h2>
+
+        <div class="cta-buttons">
+          <a href="#" class="btn-primary" role="button">
+            Explore Full Dataset
+          </a>
+          <a href="#" class="btn-secondary" role="button">
+            Download Report (PDF)
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Terrasight</span>
+      <span class="footer-tagline">Data for a changing world</span>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,602 @@
+/* ============================================================
+   TERRASIGHT — Climate Data Narrative
+   styles.css
+   ============================================================ */
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: #0c1117;
+  color: #e8ecf0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   Typography Utilities
+   ============================================================ */
+
+.section-label {
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8b95a1;
+  margin-bottom: 48px;
+  display: block;
+}
+
+.data-number {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+/* ============================================================
+   Layout
+   ============================================================ */
+
+.content-wrap {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ============================================================
+   Navigation
+   ============================================================ */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background 300ms ease, backdrop-filter 300ms ease, -webkit-backdrop-filter 300ms ease;
+}
+
+.nav.scrolled {
+  background: rgba(12, 17, 23, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-brand {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #e8ecf0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  color: #8b95a1;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.nav-link:hover {
+  color: #e8ecf0;
+}
+
+/* ============================================================
+   SECTION 1: HERO
+   ============================================================ */
+
+.hero {
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0c1117;
+  position: relative;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.hero-label {
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8b95a1;
+  margin-bottom: 24px;
+}
+
+.hero-temp {
+  font-size: clamp(72px, 12vw, 140px);
+  font-weight: 600;
+  color: #e6853e;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  animation-name: amber-glow-pulse;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 5s;
+}
+
+.hero-temp-suffix {
+  font-size: 0.6em;
+  color: #8b95a1;
+  vertical-align: super;
+  margin-left: 4px;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #8b95a1;
+  margin-top: 32px;
+  max-width: 420px;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  color: #8b95a1;
+  animation-name: bob;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* CSS chevron */
+.chevron {
+  width: 20px;
+  height: 12px;
+  position: relative;
+}
+
+.chevron::before,
+.chevron::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 12px;
+  height: 2px;
+  background: #8b95a1;
+  border-radius: 1px;
+}
+
+.chevron::before {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: right center;
+}
+
+.chevron::after {
+  right: 0;
+  transform: rotate(-45deg);
+  transform-origin: left center;
+}
+
+/* Animations */
+@keyframes bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+@keyframes amber-glow-pulse {
+  0%, 100% {
+    text-shadow: 0 0 0px rgba(230, 133, 62, 0);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(230, 133, 62, 0.35), 0 0 80px rgba(230, 133, 62, 0.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-indicator {
+    animation: none;
+  }
+  .hero-temp {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   SECTION 2: CO2
+   ============================================================ */
+
+.co2-section {
+  padding: 100px 24px;
+}
+
+.co2-inner {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.co2-stat {
+  font-size: 56px;
+  font-weight: 600;
+  color: #e8ecf0;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.co2-stat-label {
+  font-size: 14px;
+  color: #8b95a1;
+  margin-bottom: 48px;
+}
+
+/* Bar visualization */
+.co2-bar-wrap {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  background: #1a2030;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.co2-bar-preindustrial {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 62.2%; /* 280/450 */
+  background: #2aa5a0;
+  border-radius: 0;
+}
+
+.co2-bar-current {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0; /* animated by JS */
+  background: linear-gradient(90deg, #2aa5a0 0%, #e6853e 70%, #d64045 100%);
+  border-radius: 0;
+  transition: width 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.co2-bar-current.animated {
+  width: 94.2%; /* 424/450 */
+}
+
+/* Bar markers */
+.co2-markers {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 12px;
+  gap: 16px;
+}
+
+.co2-marker {
+  font-size: 13px;
+  color: #8b95a1;
+}
+
+.co2-marker--current {
+  color: #e6853e;
+  text-align: right;
+}
+
+/* Annotation */
+.co2-annotation {
+  margin-top: 32px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #e8ecf0;
+  border-left: 3px solid #d64045;
+  padding-left: 16px;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   WARMING STRIPES DIVIDER
+   ============================================================ */
+
+.stripes-divider {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  height: 200px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.stripes-divider img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.stripes-divider::before,
+.stripes-divider::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.stripes-divider::before {
+  top: 0;
+  background: linear-gradient(to bottom, #0c1117 0%, transparent 100%);
+}
+
+.stripes-divider::after {
+  bottom: 0;
+  background: linear-gradient(to top, #0c1117 0%, transparent 100%);
+}
+
+/* ============================================================
+   SECTION 3: SEA LEVEL
+   ============================================================ */
+
+.sea-section {
+  padding: 100px 24px;
+}
+
+.sea-inner {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.stat-box {
+  background: #131a22;
+  padding: 32px;
+  border-radius: 8px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+
+.stat-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-box--blue-light {
+  border-left: 4px solid #7fb8d8;
+}
+
+.stat-box--blue-mid {
+  border-left: 4px solid #3a8fc2;
+}
+
+.stat-box--blue-deep {
+  border-left: 4px solid #1a5276;
+}
+
+.stat-box-number {
+  font-size: 40px;
+  font-weight: 600;
+  color: #e8ecf0;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.stat-box-label {
+  font-size: 15px;
+  color: #8b95a1;
+  margin-top: 8px;
+}
+
+.sea-source {
+  margin-top: 32px;
+  font-size: 13px;
+  color: #8b95a1;
+  font-style: italic;
+}
+
+/* ============================================================
+   SECTION 4: CALL TO ACTION
+   ============================================================ */
+
+.cta-section {
+  padding: 120px 24px;
+  background: #0a0e13;
+  width: 100%;
+}
+
+.cta-inner {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.cta-heading {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 600;
+  color: #e8ecf0;
+  line-height: 1.4;
+  margin-bottom: 48px;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #2aa5a0;
+  color: #0c1117;
+  padding: 16px 32px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 200ms ease;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: #33b8b2;
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid #2aa5a0;
+  outline-offset: 3px;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #e8ecf0;
+  padding: 16px 32px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #8b95a1;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 200ms ease, color 200ms ease;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  border-color: #e8ecf0;
+}
+
+.btn-secondary:focus-visible {
+  outline: 2px solid #8b95a1;
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+  padding: 48px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-copy,
+.footer-tagline {
+  font-size: 13px;
+  color: #8b95a1;
+}
+
+/* ============================================================
+   RESPONSIVE — Mobile (max-width: 640px)
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .nav {
+    padding: 0 20px;
+  }
+
+  .co2-section,
+  .sea-section {
+    padding: 80px 20px;
+  }
+
+  .co2-markers {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .co2-marker--current {
+    text-align: left;
+  }
+
+  .cta-section {
+    padding: 80px 20px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    text-align: center;
+    width: 100%;
+  }
+
+  .stat-box {
+    padding: 24px;
+  }
+
+  .footer {
+    padding: 36px 20px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

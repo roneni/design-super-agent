@@ -1,0 +1,61 @@
+## Task: ENHANCE the Existing Festivals Page with Full-Screen Festival Imagery
+
+### ABSOLUTE RULE — READ FIRST, THEN MODIFY
+You MUST start by reading ALL source files from projects/pu-festivals/src/ — every component, every data file, every CSS file. This is your base. You are NOT building from scratch. You are taking this exact existing codebase and adding visual richness to it.
+
+### What This Is
+The existing projects/pu-festivals/ is a working Psychedelic Universe festivals page with:
+- Navbar (sticky, scroll-aware)
+- Hero section (FESTIVALS heading, star particles, Flower of Life sacred geometry, stats bar)
+- FeaturedEvents section (Major Events 2026 — 9 featured festival cards in a grid)
+- SearchFilters (continent, month, text search)
+- FestivalTimeline (month-grouped festival cards with entrance animations)
+- Footer
+
+ALL of this works perfectly and MUST be preserved EXACTLY. Every headline, every card, every filter, every animation. Copy the entire projects/pu-festivals/ codebase as your starting point.
+
+### What You Are Adding: Full-Screen Image Sections
+Add full-screen (100vh) image sections between the existing content sections. Each image section follows this pattern:
+- position:relative, width:100vw, height:100vh, overflow:hidden
+- Background: a generated AI image (position:absolute, inset:0, background-size:cover, background-position:center)
+- Vignette overlay: radial-gradient(ellipse at center, transparent 25%, rgba(10,10,20,0.55) 60%, rgba(10,10,20,0.92) 100%)
+- Top fade: 180px linear-gradient(to bottom, #0a0a14, transparent)
+- Bottom fade: 180px linear-gradient(to top, #0a0a14, transparent)
+- Optional: minimal decorative text (small, subtle, not a new headline)
+
+### The 5+ Required Image Sections (in order of page flow):
+
+1. HERO BACKGROUND UPGRADE — The current hero has hero-nebula.png. Generate a MUCH better image: Aerial cinematic view of a massive psytrance festival at golden sunset, thousands of colorful tents in a valley, main stage with sacred geometry decorations and laser beams, surrounded by ancient forest, warm golden light flooding the scene, editorial photography, wide angle. Use this as the hero-bg image, keeping ALL existing hero content (heading, stats bar, stars, Flower of Life) on top.
+
+2. AFTER FEATURED EVENTS — Insert a full-screen image section between FeaturedEvents and SearchFilters. Image prompt: Psychedelic trance dancefloor at night from inside the crowd, UV-reactive decorations and fractal fabric art glowing overhead, massive decorated speakers, people dancing with arms raised, colorful laser beams cutting through smoke, fractal visual projections, euphoric atmosphere, cinematic wide angle.
+
+3. MID-TIMELINE (between June and July groups) — Insert a full-screen image section breaking up the long timeline. Image prompt: Sunrise over a festival valley with colorful art installations and sacred geometry sculptures, morning mist in the mountains, psychedelic decorated main stage in the distance, a few people still dancing at dawn, warm orange and purple sky, Ozora Festival aesthetic, cinematic landscape photography.
+
+4. MID-TIMELINE (between August and September groups) — Another image break. Image prompt: Tropical psytrance festival on a beach at night, decorated palm trees with fairy lights and UV paint, ornate wooden stage structure with fractal carvings, moonlight reflecting on ocean waves, fire spinners in the distance, Universo Paralello aesthetic, cinematic night photography.
+
+5. BEFORE FOOTER — Insert a full-screen closing image section. Image prompt: Epic wide-angle shot of massive festival crowd at sunrise golden hour, thousands of silhouettes against an enormous decorated stage with sacred geometry backdrop, confetti and smoke in the air, mountains in the background, feeling of unity and transcendence, editorial festival photography.
+
+### How to Insert Mid-Timeline Images
+The FestivalTimeline component groups festivals by month. You need to modify it so that after the June month group, it renders Image Section 3, and after the August month group, it renders Image Section 4. Do this cleanly — pass the image sections as interleaved elements in the timeline rendering.
+
+### Transition Between Sections
+Every boundary between a content section and an image section MUST have a smooth gradient transition:
+- Bottom of content section: 180px gradient fading from transparent to #0a0a14
+- Top of image section: 180px gradient fading from #0a0a14 to transparent
+These create the smooth, delicate transitions between parts.
+
+### DO NOT:
+- Change ANY existing text, headings, or labels
+- Change the festival data or card layouts
+- Change existing colors for cards, badges, or filters
+- Add new features, pages, or navigation
+- Remove or change the Flower of Life, star particles, or sacred geometry
+- Remove or change existing animations
+- Create a standalone page that looks different from the screenshots — this IS the page, you are just adding images
+- Use generic stock-looking images — every image must feel like a real psytrance festival
+
+### Style Context
+Colors: #0a0a14 base, cyan #22d3ee, purple #a855f7, amber #f59e0b, magenta #ec4899
+Fonts: Orbitron (headings), Inter (body)
+Framework: React + Vite + Tailwind CSS
+Use 16:9 aspect ratio for all generated images.

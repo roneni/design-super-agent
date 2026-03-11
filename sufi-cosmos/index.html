@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sufi Cosmos — 7-Day Sahara Desert Retreat</title>
+    <meta name="description" content="A sacred 7-day spiritual retreat in the Sahara desert. Sufi meditation, sacred music, and starlit silence." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+
+    <!-- ═══════════════════════════════════════
+         NAVIGATION
+    ═══════════════════════════════════════ -->
+    <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-inner container">
+        <a href="#" class="nav-logo" aria-label="Sufi Cosmos home">
+          <span class="logo-star">✦</span>
+          <span data-lang="en">Sufi Cosmos</span>
+          <span data-lang="ar" style="display:none">الكون الصوفي</span>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="#about" data-lang="en">About</a><a href="#about" data-lang="ar" style="display:none">عن الرحلة</a></li>
+          <li><a href="#schedule" data-lang="en">Schedule</a><a href="#schedule" data-lang="ar" style="display:none">الجدول</a></li>
+          <li><a href="#teachers" data-lang="en">Teachers</a><a href="#teachers" data-lang="ar" style="display:none">المرشدون</a></li>
+          <li><a href="#pricing" data-lang="en">Pricing</a><a href="#pricing" data-lang="ar" style="display:none">الأسعار</a></li>
+          <li>
+            <a href="#register" class="nav-cta" data-lang="en">Register ☾</a>
+            <a href="#register" class="nav-cta" data-lang="ar" style="display:none">سجّل ☾</a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+            <span class="lang-en">عربي</span>
+            <span class="lang-ar" style="display:none">EN</span>
+          </button>
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <ul role="list">
+          <li><a href="#about" data-lang="en">About</a><a href="#about" data-lang="ar" style="display:none">عن الرحلة</a></li>
+          <li><a href="#schedule" data-lang="en">Schedule</a><a href="#schedule" data-lang="ar" style="display:none">الجدول</a></li>
+          <li><a href="#teachers" data-lang="en">Teachers</a><a href="#teachers" data-lang="ar" style="display:none">المرشدون</a></li>
+          <li><a href="#pricing" data-lang="en">Pricing</a><a href="#pricing" data-lang="ar" style="display:none">الأسعار</a></li>
+          <li><a href="#register" data-lang="en">Register ☾</a><a href="#register" data-lang="ar" style="display:none">سجّل ☾</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-label="Hero">
+      <!-- Girih pattern overlay -->
+      <div class="girih-overlay" aria-hidden="true"></div>
+
+      <!-- Star particles -->
+      <div class="star-field" aria-hidden="true">
+        <div class="star s1"></div><div class="star s2"></div><div class="star s3"></div>
+        <div class="star s4"></div><div class="star s5"></div><div class="star s6"></div>
+        <div class="star s7"></div><div class="star s8"></div><div class="star s9"></div>
+        <div class="star s10"></div><div class="star s11"></div><div class="star s12"></div>
+        <div class="star s13"></div><div class="star s14"></div><div class="star s15"></div>
+        <div class="star s16"></div><div class="star s17"></div><div class="star s18"></div>
+        <div class="star s19"></div><div class="star s20"></div><div class="star s21"></div>
+        <div class="star s22"></div><div class="star s23"></div><div class="star s24"></div>
+        <div class="star s25"></div>
+      </div>
+
+      <div class="hero-content container">
+        <p class="hero-overline reveal">
+          <span data-lang="en">7 Days in the Sahara</span>
+          <span data-lang="ar" style="display:none">٧ أيام في الصحراء الكبرى</span>
+        </p>
+
+        <h1 class="hero-heading reveal reveal-delay-1">
+          <span data-lang="en">Where the Desert<br>Meets the Cosmos</span>
+          <span data-lang="ar" style="display:none">حيث تلتقي الصحراء<br>بالكون</span>
+        </h1>
+
+        <p class="hero-subheading reveal reveal-delay-2">
+          <span data-lang="en">A sacred journey through Sufi meditation, ecstatic music, and starlit silence</span>
+          <span data-lang="ar" style="display:none">رحلة مقدسة عبر التأمل الصوفي والموسيقى الروحانية وصمت النجوم</span>
+        </p>
+
+        <div class="hero-ctas reveal reveal-delay-3">
+          <a href="#register" class="btn btn-primary">
+            <span data-lang="en">Begin Your Journey</span>
+            <span data-lang="ar" style="display:none">ابدأ رحلتك</span>
+          </a>
+          <a href="#about" class="btn btn-secondary">
+            <span data-lang="en">Learn More ↓</span>
+            <span data-lang="ar" style="display:none">↓ اعرف المزيد</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         ABOUT SECTION
+    ═══════════════════════════════════════ -->
+    <section class="about section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <h2 id="about-heading" class="section-heading">
+              <span data-lang="en">The Path of Nur</span>
+              <span data-lang="ar" style="display:none">طريق النور</span>
+            </h2>
+            <div class="section-divider"></div>
+            <p class="body-text">
+              <span data-lang="en">Deep in the Sahara, where the earth meets the infinite sky, exists a silence that speaks. For seven transformative days and seven starlit nights, Sufi Cosmos invites you to journey beyond the ordinary self — through ancient Sufi meditation, the sacred discipline of <em>sema</em> (whirling), and contemplative practices passed down through generations of desert wisdom keepers.</span>
+              <span data-lang="ar" style="display:none">في أعماق الصحراء الكبرى، حيث تلتقي الأرض بالسماء اللانهائية، يوجد صمت يتكلم. لسبعة أيام تحويلية وسبع ليالٍ مضيئة بالنجوم، يدعوك الكون الصوفي للسفر إلى ما وراء الذات العادية — عبر التأمل الصوفي القديم والانضباط المقدس للسماع والممارسات التأملية المتوارثة عبر أجيال من حكماء الصحراء.</span>
+            </p>
+            <p class="body-text">
+              <span data-lang="en">Seven nights under the Saharan stars, guided by master Sufi teachers, you will discover the ancient science of the heart — where the cosmos within mirrors the cosmos without.</span>
+              <span data-lang="ar" style="display:none">سبع ليالٍ تحت نجوم الصحراء، بإرشاد من أساتذة صوفيين متمرسين، ستكتشف العلم القديم للقلب — حيث يعكس الكون الداخلي الكون الخارجي.</span>
+            </p>
+
+            <ul class="about-features" role="list">
+              <li class="about-feature">
+                <span class="feature-icon" aria-hidden="true">☽</span>
+                <div>
+                  <strong data-lang="en">Sufi Meditation &amp; Sema</strong>
+                  <strong data-lang="ar" style="display:none">التأمل الصوفي والسماع</strong>
+                  <p data-lang="en">Daily guided dhikr and the sacred practice of whirling meditation</p>
+                  <p data-lang="ar" style="display:none">الذكر اليومي الموجَّه وممارسة التأمل الدوراني المقدسة</p>
+                </div>
+              </li>
+              <li class="about-feature">
+                <span class="feature-icon" aria-hidden="true">✦</span>
+                <div>
+                  <strong data-lang="en">Desert Stargazing</strong>
+                  <strong data-lang="ar" style="display:none">مراقبة النجوم في الصحراء</strong>
+                  <p data-lang="en">Midnight contemplations beneath the unpolluted Saharan sky</p>
+                  <p data-lang="ar" style="display:none">تأملات منتصف الليل تحت سماء الصحراء النقية</p>
+                </div>
+              </li>
+              <li class="about-feature">
+                <span class="feature-icon" aria-hidden="true">◎</span>
+                <div>
+                  <strong data-lang="en">Sacred Music Circles</strong>
+                  <strong data-lang="ar" style="display:none">حلقات الموسيقى المقدسة</strong>
+                  <p data-lang="en">Evening gatherings of ney flute, frame drum, and devotional chanting</p>
+                  <p data-lang="ar" style="display:none">تجمعات مسائية للناي والدف والإنشاد التعبدي</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="about-visual reveal reveal-delay-2" aria-hidden="true">
+            <div class="mandala-glow"></div>
+            <div class="mandala-container">
+              <svg class="mandala-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Outer ring -->
+                <circle cx="200" cy="200" r="190" fill="none" stroke="#d4a853" stroke-width="0.5" opacity="0.3"/>
+                <circle cx="200" cy="200" r="170" fill="none" stroke="#d4a853" stroke-width="0.5" opacity="0.2"/>
+
+                <!-- 8-pointed star large -->
+                <g transform="translate(200,200)" opacity="0.6">
+                  <polygon points="0,-140 25,-25 140,0 25,25 0,140 -25,25 -140,0 -25,-25" fill="none" stroke="#d4a853" stroke-width="1"/>
+                  <polygon points="0,-140 25,-25 140,0 25,25 0,140 -25,25 -140,0 -25,-25" fill="none" stroke="#d4a853" stroke-width="0.5" transform="rotate(22.5)"/>
+                </g>
+
+                <!-- 8-pointed star medium -->
+                <g transform="translate(200,200)" opacity="0.5">
+                  <polygon points="0,-100 18,-18 100,0 18,18 0,100 -18,18 -100,0 -18,-18" fill="none" stroke="#d4a853" stroke-width="1"/>
+                  <polygon points="0,-100 18,-18 100,0 18,18 0,100 -18,18 -100,0 -18,-18" fill="none" stroke="#d4a853" stroke-width="0.5" transform="rotate(22.5)"/>
+                </g>
+
+                <!-- 8-pointed star small -->
+                <g transform="translate(200,200)" opacity="0.4">
+                  <polygon points="0,-60 11,-11 60,0 11,11 0,60 -11,11 -60,0 -11,-11" fill="none" stroke="#d4a853" stroke-width="1"/>
+                  <polygon points="0,-60 11,-11 60,0 11,11 0,60 -11,11 -60,0 -11,-11" fill="none" stroke="#d4a853" stroke-width="0.5" transform="rotate(22.5)"/>
+                </g>
+
+                <!-- Center ring -->
+                <circle cx="200" cy="200" r="30" fill="none" stroke="#d4a853" stroke-width="1" opacity="0.5"/>
+                <circle cx="200" cy="200" r="15" fill="none" stroke="#d4a853" stroke-width="1" opacity="0.4"/>
+                <circle cx="200" cy="200" r="5" fill="#d4a853" opacity="0.4"/>
+
+                <!-- Radial spokes -->
+                <g transform="translate(200,200)" opacity="0.2" stroke="#d4a853" stroke-width="0.5">
+                  <line x1="0" y1="-190" x2="0" y2="190"/>
+                  <line x1="-190" y1="0" x2="190" y2="0"/>
+                  <line x1="-134" y1="-134" x2="134" y2="134"/>
+                  <line x1="134" y1="-134" x2="-134" y2="134"/>
+                </g>
+
+                <!-- Decorative dots at 8 cardinal points -->
+                <g fill="#d4a853" opacity="0.5">
+                  <circle cx="200" cy="15" r="2.5"/>
+                  <circle cx="200" cy="385" r="2.5"/>
+                  <circle cx="15" cy="200" r="2.5"/>
+                  <circle cx="385" cy="200" r="2.5"/>
+                  <circle cx="73" cy="73" r="2"/>
+                  <circle cx="327" cy="73" r="2"/>
+                  <circle cx="73" cy="327" r="2"/>
+                  <circle cx="327" cy="327" r="2"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         SCHEDULE SECTION
+    ═══════════════════════════════════════ -->
+    <section class="schedule section" id="schedule" aria-labelledby="schedule-heading">
+      <div class="girih-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 id="schedule-heading" class="section-heading centered">
+            <span data-lang="en">Seven Sacred Days</span>
+            <span data-lang="ar" style="display:none">سبعة أيام مقدسة</span>
+          </h2>
+          <div class="section-divider centered"></div>
+          <p class="section-subtext">
+            <span data-lang="en">Each day unfolds as a deepening journey into presence, surrender, and cosmic awareness</span>
+            <span data-lang="ar" style="display:none">كل يوم يتكشف كرحلة متعمقة نحو الحضور والتسليم والوعي الكوني</span>
+          </p>
+        </div>
+
+        <div class="schedule-grid">
+          <!-- Day 1 -->
+          <article class="day-card reveal" aria-label="Day 1">
+            <div class="day-number" aria-hidden="true">
+              <span data-lang="en">01</span>
+              <span data-lang="ar" style="display:none">٠١</span>
+            </div>
+            <div class="day-content">
+              <h3 class="day-title">
+                <span data-lang="en">Arrival &amp; Opening Ceremony</span>
+                <span data-lang="ar" style="display:none">الوصول وحفل الافتتاح</span>
+              </h3>
+              <p class="day-desc">
+                <span data-lang="en">Settle into the desert, meet your guides and fellow seekers. An evening of intention-setting under the first stars.</span>
+                <span data-lang="ar" style="display:none">الاستقرار في الصحراء، والتعرف على مرشديك وزملاء الرحلة. أمسية لتحديد النوايا تحت أوائل النجوم.</span>
+              </p>
+            </div>
+          </article>
+
+          <!-- Day 2 -->
+          <article class="day-card reveal reveal-delay-1" aria-label="Day 2">
+            <div class="day-number" aria-hidden="true">
+              <span data-lang="en">02</span>
+              <span data-lang="ar" style="display:none">٠٢</span>
+            </div>
+            <div class="day-content">
+              <h3 class="day-title">
+                <span data-lang="en">The Breath of the Desert</span>
+                <span data-lang="ar" style="display:none">نَفَس الصحراء</span>
+              </h3>
+              <p class="day-desc">
+                <span data-lang="en">Dawn breath work on the dunes. Introduction to Sufi breathing techniques and the names of the divine.</span>
+                <span data-lang="ar" style="display:none">تمارين التنفس عند الفجر على الكثبان الرملية. مقدمة لتقنيات التنفس الصوفية وأسماء الإله.</span>
+              </p>
+            </div>
+          </article>
+
+          <!-- Day 3 -->
+          <article class="day-card reveal reveal-delay-2" aria-label="Day 3">
+            <div class="day-number" aria-hidden="true">
+              <span data-lang="en">03</span>
+              <span data-lang="ar" style="display:none">٠٣</span>
+            </div>
+            <div class="day-content">
+              <h3 class="day-title">
+                <span data-lang="en">Whirling &amp; Surrender</span>
+                <span data-lang="ar" style="display:none">الدوران والتسليم</span>
+              </h3>
+              <p class="day-desc">
+                <span data-lang="en">The sacred sema practice. Learning to release the ego and become a vessel for divine movement and music.</span>
+                <span data-lang="ar" style="display:none">ممارسة السماع المقدسة. تعلّم الإفراج عن الأنا لتصبح وعاءً للحركة والموسيقى الإلهية.</span>
+              </p>
+            </div>
+          </article>
+
+          <!-- Day 4 -->
+          <article class="day-card reveal" aria-label="Day 4">
+            <div class="day-number" aria-hidden="true">
+              <span data-lang="en">04</span>
+              <span data-lang="ar" style="display:none">٠٤</span>
+            </div>
+            <div class="day-content">
+              <h3 class="day-title">
+                <span data-lang="en">The Night of Silence</span>
+                <span data-lang="ar" style="display:none">ليلة الصمت</span>
+              </h3>
+              <p class="day-desc">
+                <span data-lang="en">A full day and night of noble silence. Solo desert walks, private contemplation, and inner listening.</span>
+                <span data-lang="ar" style="display:none">يوم كامل وليلة من الصمت النبيل. نزهات منفردة في الصحراء والتأمل الخاص والاستماع الداخلي.</span>
+              </p>
+            </div>
+          </article>
+
+          <!-- Day 5 -->
+          <article class="day-card reveal reveal-delay-1" aria-label="Day 5">
+            <div class="day-number" aria-hidden="true">
+              <span data-lang="en">05</span>
+              <span data-lang="ar" style="display:none">٠٥</span>
+            </div>
+            <div class="day-content">
+              <h3 class="day-title">
+                <span data-lang="en">Sacred Music &amp; Chanting</span>
+                <span data-lang="ar" style="display:none">الموسيقى المقدسة والذكر</span>
+              </h3>
+              <p class="day-desc">
+                <span data-lang="en">An immersive day of Sufi music — ney flute, frame drum, qawwali, and communal dhikr chanting circles.</span>
+                <span data-lang="ar" style="display:none">يوم غامر من الموسيقى الصوفية — ناي، دف، موسيقى القوال، وحلقات الذكر الجماعية.</span>
+              </p>
+            </div>
+          </article>
+
+          <!-- Day 6 -->
+          <article class="day-card reveal reveal-delay-2" aria-label="Day 6">
+            <div class="day-number" aria-hidden="true">
+              <span data-lang="en">06</span>
+              <span data-lang="ar" style="display:none">٠٦</span>
+            </div>
+            <div class="day-content">
+              <h3 class="day-title">
+                <span data-lang="en">Starlight Meditation</span>
+                <span data-lang="ar" style="display:none">تأمل ضوء النجوم</span>
+              </h3>
+              <p class="day-desc">
+                <span data-lang="en">Guided night meditation beneath the Milky Way. The cosmos as mirror of the soul — a timeless Sufi teaching.</span>
+                <span data-lang="ar" style="display:none">تأمل ليلي موجَّه تحت درب التبانة. الكون كمرآة للروح — تعليم صوفي خارج الزمان.</span>
+              </p>
+            </div>
+          </article>
+
+          <!-- Day 7 -->
+          <article class="day-card day-card-full reveal" aria-label="Day 7">
+            <div class="day-number" aria-hidden="true">
+              <span data-lang="en">07</span>
+              <span data-lang="ar" style="display:none">٠٧</span>
+            </div>
+            <div class="day-content">
+              <h3 class="day-title">
+                <span data-lang="en">Integration &amp; Departure</span>
+                <span data-lang="ar" style="display:none">التكامل والمغادرة</span>
+              </h3>
+              <p class="day-desc">
+                <span data-lang="en">Closing ceremony, sharing circle, and gentle return to the world — carrying the desert's silence and the stars' wisdom within you.</span>
+                <span data-lang="ar" style="display:none">حفل الختام ودائرة المشاركة والعودة اللطيفة إلى العالم — حاملاً في داخلك صمت الصحراء وحكمة النجوم.</span>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         TEACHERS SECTION
+    ═══════════════════════════════════════ -->
+    <section class="teachers section" id="teachers" aria-labelledby="teachers-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 id="teachers-heading" class="section-heading centered">
+            <span data-lang="en">Guides on the Path</span>
+            <span data-lang="ar" style="display:none">المرشدون على الطريق</span>
+          </h2>
+          <div class="section-divider centered"></div>
+          <p class="section-subtext">
+            <span data-lang="en">Masters who have walked the desert path for decades, carrying the living transmission of Sufi wisdom</span>
+            <span data-lang="ar" style="display:none">أساتذة ساروا على درب الصحراء لعقود، حاملين الإرسال الحي لحكمة الصوفية</span>
+          </p>
+        </div>
+
+        <div class="teachers-grid">
+          <!-- Teacher 1 -->
+          <article class="teacher-card reveal">
+            <div class="teacher-avatar" aria-hidden="true">
+              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <!-- Octagonal frame -->
+                <polygon points="60,5 95,20 115,55 115,65 95,100 60,115 25,100 5,65 5,55 25,20"
+                  fill="none" stroke="#d4a853" stroke-width="1.5" opacity="0.7"/>
+                <!-- Inner 8-pointed star border -->
+                <polygon points="60,15 76,36 100,36 84,56 90,80 60,68 30,80 36,56 20,36 44,36"
+                  fill="none" stroke="#d4a853" stroke-width="0.8" opacity="0.4"/>
+                <!-- Gradient background circle -->
+                <defs>
+                  <radialGradient id="avatarGrad1" cx="50%" cy="40%" r="60%">
+                    <stop offset="0%" stop-color="#2a1a3a"/>
+                    <stop offset="100%" stop-color="#1a1410"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="60" cy="55" r="35" fill="url(#avatarGrad1)" stroke="#d4a853" stroke-width="1" opacity="0.8"/>
+                <!-- Center star -->
+                <g transform="translate(60,55)" opacity="0.5">
+                  <polygon points="0,-18 4,-4 18,0 4,4 0,18 -4,4 -18,0 -4,-4"
+                    fill="none" stroke="#d4a853" stroke-width="0.8"/>
+                </g>
+                <circle cx="60" cy="55" r="5" fill="#d4a853" opacity="0.3"/>
+              </svg>
+            </div>
+            <div class="teacher-info">
+              <h3 class="teacher-name">
+                <span data-lang="en">Sheikh Ahmad al-Rashidi</span>
+                <span data-lang="ar" style="display:none">الشيخ أحمد الرشيدي</span>
+              </h3>
+              <p class="teacher-title">
+                <span data-lang="en">Sufi Master &amp; Meditation Guide</span>
+                <span data-lang="ar" style="display:none">أستاذ صوفي ومرشد تأمل</span>
+              </p>
+              <p class="teacher-bio">
+                <span data-lang="en">Thirty years of practice in the Shadhili and Mevlevi traditions. Initiated in Morocco, trained in Turkey. He transmits the living flame of Sufi wisdom with quiet authority and boundless compassion.</span>
+                <span data-lang="ar" style="display:none">ثلاثون عاماً من الممارسة في طرق الشاذلية والمولوية. تلقى تعاليمه في المغرب وتدرّب في تركيا. ينقل شعلة الحكمة الصوفية الحية بهدوء وسلطة ورحمة لا حدود لها.</span>
+              </p>
+            </div>
+          </article>
+
+          <!-- Teacher 2 -->
+          <article class="teacher-card reveal reveal-delay-1">
+            <div class="teacher-avatar" aria-hidden="true">
+              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="60,5 95,20 115,55 115,65 95,100 60,115 25,100 5,65 5,55 25,20"
+                  fill="none" stroke="#d4a853" stroke-width="1.5" opacity="0.7"/>
+                <polygon points="60,15 76,36 100,36 84,56 90,80 60,68 30,80 36,56 20,36 44,36"
+                  fill="none" stroke="#d4a853" stroke-width="0.8" opacity="0.4"/>
+                <defs>
+                  <radialGradient id="avatarGrad2" cx="50%" cy="40%" r="60%">
+                    <stop offset="0%" stop-color="#1a2a3a"/>
+                    <stop offset="100%" stop-color="#0d1a1a"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="60" cy="55" r="35" fill="url(#avatarGrad2)" stroke="#d4a853" stroke-width="1" opacity="0.8"/>
+                <g transform="translate(60,55)" opacity="0.5">
+                  <circle cx="0" cy="0" r="18" fill="none" stroke="#d4a853" stroke-width="0.8"/>
+                  <circle cx="0" cy="0" r="8" fill="none" stroke="#d4a853" stroke-width="0.8"/>
+                </g>
+                <circle cx="60" cy="55" r="4" fill="#4a7cb5" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="teacher-info">
+              <h3 class="teacher-name">
+                <span data-lang="en">Layla Anwar</span>
+                <span data-lang="ar" style="display:none">ليلى أنور</span>
+              </h3>
+              <p class="teacher-title">
+                <span data-lang="en">Sacred Music Director</span>
+                <span data-lang="ar" style="display:none">مديرة الموسيقى المقدسة</span>
+              </p>
+              <p class="teacher-bio">
+                <span data-lang="en">Master of the ney flute and keeper of Andalusian-Moroccan vocal traditions. She holds the space of sacred sound as a doorway to presence, weaving silence and song into a single prayer.</span>
+                <span data-lang="ar" style="display:none">أستاذة ناي وحارسة تقاليد الغناء الأندلسي المغربي. تحتضن فضاء الصوت المقدس كبوابة للحضور، نسجاً للصمت والأغنية في صلاة واحدة.</span>
+              </p>
+            </div>
+          </article>
+
+          <!-- Teacher 3 -->
+          <article class="teacher-card reveal reveal-delay-2">
+            <div class="teacher-avatar" aria-hidden="true">
+              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="60,5 95,20 115,55 115,65 95,100 60,115 25,100 5,65 5,55 25,20"
+                  fill="none" stroke="#d4a853" stroke-width="1.5" opacity="0.7"/>
+                <polygon points="60,15 76,36 100,36 84,56 90,80 60,68 30,80 36,56 20,36 44,36"
+                  fill="none" stroke="#d4a853" stroke-width="0.8" opacity="0.4"/>
+                <defs>
+                  <radialGradient id="avatarGrad3" cx="50%" cy="40%" r="60%">
+                    <stop offset="0%" stop-color="#1a2a1a"/>
+                    <stop offset="100%" stop-color="#0d1410"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="60" cy="55" r="35" fill="url(#avatarGrad3)" stroke="#d4a853" stroke-width="1" opacity="0.8"/>
+                <g transform="translate(60,55)" opacity="0.5">
+                  <polygon points="0,-18 4,-4 18,0 4,4 0,18 -4,4 -18,0 -4,-4"
+                    fill="none" stroke="#d4a853" stroke-width="0.8"/>
+                  <polygon points="0,-18 4,-4 18,0 4,4 0,18 -4,4 -18,0 -4,-4"
+                    fill="none" stroke="#d4a853" stroke-width="0.5" transform="rotate(22.5)"/>
+                </g>
+                <circle cx="60" cy="55" r="4" fill="#3a8a5a" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="teacher-info">
+              <h3 class="teacher-name">
+                <span data-lang="en">Dr. Karim Benali</span>
+                <span data-lang="ar" style="display:none">د. كريم بن علي</span>
+              </h3>
+              <p class="teacher-title">
+                <span data-lang="en">Desert Wisdom Keeper</span>
+                <span data-lang="ar" style="display:none">حارس حكمة الصحراء</span>
+              </p>
+              <p class="teacher-bio">
+                <span data-lang="en">Scholar of Saharan contemplative traditions and author of three books on desert mysticism. He bridges the ancient and the modern, offering the desert as a living classroom of the soul.</span>
+                <span data-lang="ar" style="display:none">عالم في التقاليد التأملية الصحراوية ومؤلف ثلاثة كتب في الصوفية الصحراوية. يجسر بين القديم والحديث، مقدماً الصحراء كفصل دراسي حي للروح.</span>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         PRICING SECTION
+    ═══════════════════════════════════════ -->
+    <section class="pricing section" id="pricing" aria-labelledby="pricing-heading">
+      <div class="girih-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 id="pricing-heading" class="section-heading centered">
+            <span data-lang="en">Sacred Investment</span>
+            <span data-lang="ar" style="display:none">استثمار مقدس</span>
+          </h2>
+          <div class="section-divider centered"></div>
+          <p class="section-subtext">
+            <span data-lang="en">Three pathways to the same journey — choose what resonates with your soul</span>
+            <span data-lang="ar" style="display:none">ثلاثة مسارات لنفس الرحلة — اختر ما يتناغم مع روحك</span>
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Tier 1: Desert Star -->
+          <article class="price-card reveal">
+            <div class="price-tier">
+              <span data-lang="en">Desert Star</span>
+              <span data-lang="ar" style="display:none">نجمة الصحراء</span>
+            </div>
+            <div class="price-amount">$1,800</div>
+            <p class="price-duration">
+              <span data-lang="en">per person · 7 nights</span>
+              <span data-lang="ar" style="display:none">للشخص · ٧ ليالٍ</span>
+            </p>
+            <ul class="price-features" role="list">
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">Shared tent accommodation</span>
+                <span data-lang="ar" style="display:none">إقامة في خيمة مشتركة</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">All meals included</span>
+                <span data-lang="ar" style="display:none">جميع الوجبات مشمولة</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">All retreat activities</span>
+                <span data-lang="ar" style="display:none">جميع أنشطة الخلوة</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">Group sessions with teachers</span>
+                <span data-lang="ar" style="display:none">جلسات جماعية مع المرشدين</span>
+              </li>
+            </ul>
+            <a href="#register" class="btn btn-outline-gold">
+              <span data-lang="en">Reserve Your Spot</span>
+              <span data-lang="ar" style="display:none">احجز مكانك</span>
+            </a>
+          </article>
+
+          <!-- Tier 2: Crescent Moon (FEATURED) -->
+          <article class="price-card price-card-featured reveal reveal-delay-1" aria-label="Featured tier">
+            <div class="featured-badge">
+              <span data-lang="en">Most Chosen</span>
+              <span data-lang="ar" style="display:none">الأكثر اختياراً</span>
+            </div>
+            <div class="price-tier">
+              <span data-lang="en">Crescent Moon ☾</span>
+              <span data-lang="ar" style="display:none">الهلال ☾</span>
+            </div>
+            <div class="price-amount">$2,800</div>
+            <p class="price-duration">
+              <span data-lang="en">per person · 7 nights</span>
+              <span data-lang="ar" style="display:none">للشخص · ٧ ليالٍ</span>
+            </p>
+            <ul class="price-features" role="list">
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">Private tent accommodation</span>
+                <span data-lang="ar" style="display:none">إقامة في خيمة خاصة</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">All meals included</span>
+                <span data-lang="ar" style="display:none">جميع الوجبات مشمولة</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">All retreat activities</span>
+                <span data-lang="ar" style="display:none">جميع أنشطة الخلوة</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">Three 1-on-1 teacher sessions</span>
+                <span data-lang="ar" style="display:none">ثلاث جلسات فردية مع المرشد</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">Sacred music instrument lending</span>
+                <span data-lang="ar" style="display:none">إعارة آلات الموسيقى المقدسة</span>
+              </li>
+            </ul>
+            <a href="#register" class="btn btn-primary">
+              <span data-lang="en">Reserve Your Spot</span>
+              <span data-lang="ar" style="display:none">احجز مكانك</span>
+            </a>
+          </article>
+
+          <!-- Tier 3: Full Moon -->
+          <article class="price-card reveal reveal-delay-2">
+            <div class="price-tier">
+              <span data-lang="en">Full Moon</span>
+              <span data-lang="ar" style="display:none">البدر</span>
+            </div>
+            <div class="price-amount">$4,200</div>
+            <p class="price-duration">
+              <span data-lang="en">per person · 7 nights</span>
+              <span data-lang="ar" style="display:none">للشخص · ٧ ليالٍ</span>
+            </p>
+            <ul class="price-features" role="list">
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">Luxury Berber tent suite</span>
+                <span data-lang="ar" style="display:none">جناح خيمة بربرية فاخرة</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">Private chef &amp; all meals</span>
+                <span data-lang="ar" style="display:none">طاهٍ خاص وجميع الوجبات</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">All retreat activities</span>
+                <span data-lang="ar" style="display:none">جميع أنشطة الخلوة</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">Daily personal guidance session</span>
+                <span data-lang="ar" style="display:none">جلسة إرشاد شخصية يومية</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">Personal spiritual guide</span>
+                <span data-lang="ar" style="display:none">مرشد روحي شخصي</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <span data-lang="en">Post-retreat integration support</span>
+                <span data-lang="ar" style="display:none">دعم التكامل بعد الخلوة</span>
+              </li>
+            </ul>
+            <a href="#register" class="btn btn-outline-gold">
+              <span data-lang="en">Reserve Your Spot</span>
+              <span data-lang="ar" style="display:none">احجز مكانك</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         REGISTRATION CTA SECTION
+    ═══════════════════════════════════════ -->
+    <section class="register-cta section" id="register" aria-labelledby="register-heading">
+      <div class="girih-overlay girih-overlay-center" aria-hidden="true"></div>
+      <div class="nur-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="register-content reveal">
+          <p class="hero-overline">
+            <span data-lang="en">September 15 – 22, 2026</span>
+            <span data-lang="ar" style="display:none">١٥ – ٢٢ سبتمبر ٢٠٢٦</span>
+          </p>
+          <h2 id="register-heading" class="register-heading">
+            <span data-lang="en">Answer the Call</span>
+            <span data-lang="ar" style="display:none">لبِّ النداء</span>
+          </h2>
+          <p class="register-location">
+            <span data-lang="en">Sahara Desert, Morocco</span>
+            <span data-lang="ar" style="display:none">الصحراء الكبرى، المغرب</span>
+          </p>
+          <a href="mailto:join@suficosmos.com" class="btn btn-primary btn-large">
+            <span data-lang="en">Begin Your Journey</span>
+            <span data-lang="ar" style="display:none">ابدأ رحلتك</span>
+          </a>
+          <p class="register-limit">
+            <span data-lang="en">Limited to 40 seekers</span>
+            <span data-lang="ar" style="display:none">محدود لـ ٤٠ باحثاً</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════ -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Column 1: About -->
+          <div class="footer-col">
+            <div class="footer-logo">
+              <span class="logo-star">✦</span>
+              <span data-lang="en">Sufi Cosmos</span>
+              <span data-lang="ar" style="display:none">الكون الصوفي</span>
+            </div>
+            <p class="footer-about">
+              <span data-lang="en">Sacred journeys at the intersection of Sufi wisdom, desert contemplation, and cosmic awareness.</span>
+              <span data-lang="ar" style="display:none">رحلات مقدسة عند تقاطع الحكمة الصوفية والتأمل الصحراوي والوعي الكوني.</span>
+            </p>
+            <div class="footer-social" aria-label="Social media links">
+              <a href="#" aria-label="Instagram" class="social-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="#" aria-label="YouTube" class="social-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+              </a>
+              <a href="#" aria-label="Spotify" class="social-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 13.5a7.5 7.5 0 0 1 8 0"/><path d="M6.5 10.5a11 11 0 0 1 11 0"/><path d="M9.5 16.5a4 4 0 0 1 5 0"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Links -->
+          <div class="footer-col">
+            <h4 class="footer-heading">
+              <span data-lang="en">Navigate</span>
+              <span data-lang="ar" style="display:none">التنقل</span>
+            </h4>
+            <ul class="footer-links" role="list">
+              <li><a href="#about" data-lang="en">About the Retreat</a><a href="#about" data-lang="ar" style="display:none">عن الخلوة</a></li>
+              <li><a href="#schedule" data-lang="en">7-Day Schedule</a><a href="#schedule" data-lang="ar" style="display:none">جدول ٧ أيام</a></li>
+              <li><a href="#teachers" data-lang="en">Our Teachers</a><a href="#teachers" data-lang="ar" style="display:none">مرشدونا</a></li>
+              <li><a href="#pricing" data-lang="en">Pricing &amp; Tiers</a><a href="#pricing" data-lang="ar" style="display:none">الأسعار والمستويات</a></li>
+              <li><a href="#register" data-lang="en">Register</a><a href="#register" data-lang="ar" style="display:none">التسجيل</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact -->
+          <div class="footer-col">
+            <h4 class="footer-heading">
+              <span data-lang="en">Contact</span>
+              <span data-lang="ar" style="display:none">التواصل</span>
+            </h4>
+            <address class="footer-contact">
+              <p>
+                <span data-lang="en">For inquiries and bookings:</span>
+                <span data-lang="ar" style="display:none">للاستفسارات والحجوزات:</span>
+              </p>
+              <a href="mailto:join@suficosmos.com" class="footer-email">join@suficosmos.com</a>
+              <p class="footer-location">
+                <span data-lang="en">Morocco · Tunisia · UAE</span>
+                <span data-lang="ar" style="display:none">المغرب · تونس · الإمارات</span>
+              </p>
+            </address>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">
+            <span data-lang="en">© 2026 Sufi Cosmos. All rights reserved.</span>
+            <span data-lang="ar" style="display:none">© ٢٠٢٦ الكون الصوفي. جميع الحقوق محفوظة.</span>
+          </p>
+          <p class="footer-tagline">
+            <span data-lang="en">Where the desert meets the cosmos</span>
+            <span data-lang="ar" style="display:none">حيث تلتقي الصحراء بالكون</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

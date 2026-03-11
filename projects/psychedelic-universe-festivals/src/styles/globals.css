@@ -1,0 +1,210 @@
+@import "tailwindcss";
+@import "@fontsource/orbitron/400.css";
+@import "@fontsource/orbitron/600.css";
+@import "@fontsource/orbitron/700.css";
+@import "@fontsource/orbitron/900.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+:root {
+  --bg-void: #0a0a0a;
+  --bg-deep: #0d0d1a;
+  --bg-surface: #1a1a2e;
+  --bg-elevated: #2a2a3e;
+  --accent-cyan: #22d3ee;
+  --accent-purple: #a855f7;
+  --accent-magenta: #ec4899;
+  --accent-warm: #f97316;
+  --accent-amber: #d97706;
+  --accent-gold: #eab308;
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0b8;
+  --text-muted: #6b6b80;
+  --glow-cyan: 0 0 20px rgba(34, 211, 238, 0.3), 0 0 60px rgba(34, 211, 238, 0.1);
+  --glow-purple: 0 0 20px rgba(168, 85, 247, 0.3), 0 0 60px rgba(168, 85, 247, 0.1);
+  --glow-warm: 0 0 20px rgba(249, 115, 22, 0.3), 0 0 60px rgba(249, 115, 22, 0.1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-void);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-bottom: 80px;
+}
+
+/* ── Typography ── */
+.font-orbitron {
+  font-family: 'Orbitron', monospace;
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-void);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-cyan);
+  border-radius: 2px;
+}
+
+/* ── Star field animation ── */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+@keyframes twinkle-slow {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes bounce-scroll {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: 0.5; }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nebula-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-20px, 10px) scale(1.02); }
+  66% { transform: translate(10px, -15px) scale(0.98); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+/* ── Star field ── */
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+}
+
+/* ── Hero nebula CSS fallback ── */
+.hero-nebula-bg {
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(26, 96, 96, 0.6) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 20% 60%, rgba(13, 13, 42, 0.9) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 85% 20%, rgba(212, 168, 83, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse 100% 100% at 50% 50%, #0d1035 0%, #0a0e1a 60%, #0a0a14 100%);
+}
+
+.hero-nebula-bg-overlay {
+  background:
+    radial-gradient(ellipse 50% 50% at 80% 30%, rgba(34, 211, 238, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 30% 30% at 60% 70%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+    linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.05) 40%, rgba(10,10,10,0.75) 100%);
+}
+
+/* ── Goa nebula CSS fallback ── */
+.goa-nebula-bg {
+  background:
+    radial-gradient(ellipse 70% 80% at 50% 50%, rgba(249, 115, 22, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 60% at 30% 30%, rgba(26, 96, 96, 0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 80% at 80% 70%, rgba(217, 119, 6, 0.3) 0%, transparent 60%),
+    linear-gradient(135deg, #0d1a1a 0%, #1a1000 40%, #0d0a00 100%);
+}
+
+/* ── Festival card image fallbacks ── */
+.festival-ozora-bg {
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 30%, rgba(16, 185, 129, 0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 80% at 50% 80%, rgba(212, 168, 83, 0.3) 0%, transparent 60%),
+    linear-gradient(160deg, #071a14 0%, #0d1a0d 40%, #0a0d00 100%);
+}
+
+.festival-boom-bg {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 20%, rgba(168, 85, 247, 0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 60% at 70% 70%, rgba(236, 72, 153, 0.3) 0%, transparent 60%),
+    linear-gradient(160deg, #0d0d1a 0%, #1a0d1a 40%, #100010 100%);
+}
+
+.festival-universo-bg {
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 30%, rgba(6, 182, 212, 0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 50% at 80% 70%, rgba(236, 72, 153, 0.4) 0%, transparent 60%),
+    linear-gradient(160deg, #00101a 0%, #001a1a 40%, #0a0010 100%);
+}
+
+/* ── Glass card ── */
+.glass-card {
+  background: rgba(26, 26, 46, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Sacred geometry SVG dims ── */
+.sacred-geo-divider {
+  opacity: 0.05;
+  width: 100%;
+  height: 120px;
+}
+
+/* ── Gradient text ── */
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #22d3ee 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #f97316 0%, #eab308 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Timeline line gradient ── */
+.timeline-line {
+  background: linear-gradient(to bottom, #22d3ee 0%, #a855f7 50%, #ec4899 100%);
+}
+
+/* ── Scroll bounce animation ── */
+.scroll-bounce {
+  animation-name: bounce-scroll;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* ── Prefers reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-bounce,
+  .star,
+  [data-animate] {
+    animation: none !important;
+    transition: none !important;
+  }
+}

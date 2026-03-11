@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ─────────────────────────────────── */
+:root {
+  --glow-cyan: 0 0 20px rgba(34, 211, 238, 0.4);
+  --glow-purple: 0 0 20px rgba(168, 85, 247, 0.4);
+  --glow-amber: 0 0 20px rgba(245, 158, 11, 0.4);
+  --glow-magenta: 0 0 20px rgba(236, 72, 153, 0.4);
+}
+
+/* ─── Base Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a14;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ─── Selection ──────────────────────────────────────────────── */
+::selection {
+  background: rgba(34, 211, 238, 0.3);
+  color: #ffffff;
+}
+
+/* ─── Grain Overlay ──────────────────────────────────────────── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* ─── Hero Background Image ──────────────────────────────────── */
+.hero-bg {
+  background-image: url('/images/hero-festival.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ─── Featured Section Background Image ─────────────────────── */
+.featured-bg {
+  background-image: url('/images/featured-nebula.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ─── Hero Animations ────────────────────────────────────────── */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+
+@keyframes mars-drift {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.mars-bg-drift {
+  animation-name: mars-drift;
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes spin-slow-reverse {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: var(--star-opacity-min, 0.2); }
+  50% { opacity: var(--star-opacity-max, 0.8); }
+}
+
+@keyframes bounce-chevron {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+@keyframes nebula-glow {
+  0% {
+    background-position: 30% 40%, 70% 60%;
+  }
+  25% {
+    background-position: 40% 30%, 60% 70%;
+  }
+  50% {
+    background-position: 50% 50%, 50% 50%;
+  }
+  75% {
+    background-position: 35% 60%, 65% 40%;
+  }
+  100% {
+    background-position: 30% 40%, 70% 60%;
+  }
+}
+
+/* ─── Hero breathing layer ───────────────────────────────────── */
+.hero-breathe {
+  animation-name: breathe;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* ─── Sacred geometry spin ───────────────────────────────────── */
+.sacred-spin {
+  animation-name: spin-slow;
+  animation-duration: 120s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.sacred-spin-reverse {
+  animation-name: spin-slow-reverse;
+  animation-duration: 90s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* ─── Star twinkle ───────────────────────────────────────────── */
+.star-twinkle {
+  animation-name: twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* ─── Scroll chevron bounce ──────────────────────────────────── */
+.chevron-bounce {
+  animation-name: bounce-chevron;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* ─── Nebula glow drift ──────────────────────────────────────── */
+.nebula-glow-drift {
+  animation-name: nebula-glow;
+  animation-duration: 30s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* ─── Festival row entrance ──────────────────────────────────── */
+.festival-row {
+  opacity: 0;
+  transform: translateY(10px);
+  transition-property: opacity, transform, background-color;
+  transition-duration: 400ms, 400ms, 150ms;
+  transition-timing-function: ease-out, ease-out, ease;
+}
+.festival-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.festival-row.past {
+  opacity: 0 !important;
+}
+.festival-row.past.visible {
+  opacity: 0.4 !important;
+}
+
+/* ─── Festival card entrance ─────────────────────────────────── */
+.festival-card-enter {
+  opacity: 0;
+  transform: translateY(16px);
+  transition-property: opacity, transform;
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+.festival-card-enter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.festival-card-enter.past {
+  opacity: 0 !important;
+}
+.festival-card-enter.past.visible {
+  opacity: 0.4 !important;
+}
+
+/* ─── Gradient text ──────────────────────────────────────────── */
+.gradient-text-cyan-purple {
+  background: linear-gradient(135deg, #22d3ee 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Card glow top line ─────────────────────────────────────── */
+.card-amber-glow {
+  position: relative;
+}
+.card-amber-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.5), transparent);
+  pointer-events: none;
+  border-radius: 12px 12px 0 0;
+}
+
+/* ─── Nav scroll transition ──────────────────────────────────── */
+.nav-base {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition-property: background, border-color, backdrop-filter;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+}
+.nav-scrolled {
+  background: rgba(10, 10, 20, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Section gradient transitions ───────────────────────────── */
+.section-fade-down {
+  background: linear-gradient(to bottom, transparent, #0a0a14);
+}
+
+.section-fade-up {
+  background: linear-gradient(to top, transparent, #0a0a14);
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

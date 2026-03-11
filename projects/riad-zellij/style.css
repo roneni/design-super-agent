@@ -1,0 +1,521 @@
+/* ─────────────────────────────────────────────
+   Riad Zellij — Luxury Boutique Riad
+   Warm luxury. Handcrafted. Earthy.
+   ───────────────────────────────────────────── */
+
+/* ─── CSS VARIABLES ─── */
+:root {
+  --cream:         #faf5ef;
+  --sand:          #e8d5b7;
+  --clay:          #c4713a;
+  --terracotta:    #8b4513;
+  --teal:          #1a7a6d;
+  --walnut:        #2a1f1a;
+  --walnut-light:  #3d2e22;
+  --brown-mid:     #5a4535;
+  --footer-bg:     #221a15;
+}
+
+/* ─── RESET & BASE ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--walnut-light);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+address {
+  font-style: normal;
+}
+
+/* ─── SHARED UTILITY ─── */
+.divider-line {
+  width: 60px;
+  height: 1px;
+  background-color: var(--clay);
+  margin: 0 auto;
+}
+
+.divider-line--dark {
+  background-color: var(--clay);
+  margin-bottom: 24px;
+}
+
+/* ─────────────────────────────────────────────
+   SECTION 1: HERO
+   ───────────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.hero-image-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(42, 31, 26, 0.72) 0%,
+    rgba(42, 31, 26, 0.22) 40%,
+    transparent 70%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 24px 120px;
+
+  /* Fade-in animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation-name: fadeUp;
+  animation-duration: 1s;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.hero-location {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sand);
+  opacity: 0.8;
+  margin-bottom: 16px;
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(48px, 7vw, 88px);
+  color: var(--cream);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.hero-content .divider-line {
+  margin: 20px auto;
+}
+
+.hero-tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  color: var(--sand);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: var(--sand);
+  opacity: 0.5;
+
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.chevron {
+  width: 28px;
+  height: 28px;
+}
+
+/* ─────────────────────────────────────────────
+   SECTION 2: THREE RITUALS
+   ───────────────────────────────────────────── */
+.rituals {
+  background-color: var(--cream);
+  padding: 100px 24px;
+}
+
+.rituals-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 48px);
+  color: var(--walnut);
+  letter-spacing: 0.01em;
+  margin-bottom: 12px;
+}
+
+.section-subheading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--terracotta);
+  letter-spacing: 0.03em;
+}
+
+/* Cards grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Card */
+.card {
+  background: rgba(232, 213, 183, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(196, 113, 58, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(42, 31, 26, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 40px rgba(42, 31, 26, 0.14);
+  transform: translateY(-4px);
+}
+
+.card-image-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.04);
+}
+
+.card-content {
+  padding: 28px;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--walnut);
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+
+.card-desc {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--brown-mid);
+}
+
+/* ─────────────────────────────────────────────
+   SECTION 3: ARRIVAL
+   ───────────────────────────────────────────── */
+.arrival {
+  background-color: var(--walnut);
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.arrival-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrival-line {
+  width: 40px;
+  margin-bottom: 24px;
+}
+
+.arrival-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--cream);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+
+.arrival-address {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.arrival-address span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--sand);
+  opacity: 0.7;
+  letter-spacing: 0.02em;
+}
+
+.arrival-phone {
+  display: block;
+  margin-top: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--sand);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease;
+}
+
+.arrival-phone:hover {
+  color: var(--clay);
+}
+
+.arrival-phone:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.arrival-details {
+  margin-top: 32px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--clay);
+  text-transform: none;
+}
+
+/* CTA Button */
+.cta-btn {
+  margin-top: 40px;
+  background-color: var(--clay);
+  color: var(--cream);
+  padding: 16px 48px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: var(--terracotta);
+  transform: translateY(-1px);
+}
+
+.cta-btn:active {
+  transform: translateY(0);
+}
+
+.cta-btn:focus-visible {
+  outline: 2px solid var(--sand);
+  outline-offset: 4px;
+}
+
+/* ─────────────────────────────────────────────
+   FOOTER
+   ───────────────────────────────────────────── */
+.site-footer {
+  background-color: var(--footer-bg);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.footer-copy {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(250, 245, 239, 0.3);
+}
+
+/* ─────────────────────────────────────────────
+   SCROLL REVEAL — JS classes
+   ───────────────────────────────────────────── */
+.js-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition-property: opacity, transform;
+  transition-duration: 0.7s;
+  transition-timing-function: ease-out;
+}
+
+.js-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for cards */
+.js-reveal:nth-child(2) { transition-delay: 0.15s; }
+.js-reveal:nth-child(3) { transition-delay: 0.30s; }
+
+.js-reveal-block {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.js-reveal-block.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────
+   KEYFRAME ANIMATIONS
+   ───────────────────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   REDUCED MOTION
+   ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-content {
+    animation-name: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .scroll-indicator {
+    animation-name: none;
+  }
+
+  .js-reveal,
+  .js-reveal-block {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .card {
+    transition: none;
+  }
+
+  .card-image {
+    transition: none;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE — MOBILE FIRST
+   ───────────────────────────────────────────── */
+
+/* Tablet and below: stack cards */
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .rituals {
+    padding: 72px 20px;
+  }
+
+  .arrival {
+    padding: 72px 20px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    padding: 0 20px 100px;
+  }
+
+  .hero-tagline {
+    font-size: 16px;
+  }
+
+  .section-header {
+    margin-bottom: 48px;
+  }
+
+  .cta-btn {
+    padding: 14px 36px;
+  }
+}

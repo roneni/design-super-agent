@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riad Zellij — Marrakech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── SECTION 1: HERO ─── -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-image-wrap">
+      <img
+        src="/images/hero.png"
+        alt="Riad Zellij courtyard with zellij fountain and lantern light"
+        class="hero-bg"
+        width="1536"
+        height="1024"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <span class="hero-location">Marrakech</span>
+      <h1 class="hero-name">Riad Zellij</h1>
+      <div class="divider-line"></div>
+      <p class="hero-tagline">Where every tile tells a story</p>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 2: THREE RITUALS ─── -->
+  <section class="rituals" aria-label="Three Rituals">
+    <div class="rituals-inner">
+      <div class="section-header">
+        <div class="divider-line divider-line--dark"></div>
+        <h2 class="section-heading">Three Rituals</h2>
+        <p class="section-subheading">Moments that define your stay</p>
+      </div>
+
+      <div class="cards-grid">
+
+        <article class="card js-reveal" aria-label="The Courtyard">
+          <div class="card-image-wrap">
+            <img
+              src="/images/courtyard.png"
+              alt="Moroccan riad courtyard with zellij mosaic tiles and fountain in morning light"
+              class="card-image"
+              width="1024"
+              height="1024"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">The Courtyard</h3>
+            <p class="card-desc">Morning light on centuries-old mosaic, the fountain's whisper, citrus in the air.</p>
+          </div>
+        </article>
+
+        <article class="card js-reveal" aria-label="The Hammam">
+          <div class="card-image-wrap">
+            <img
+              src="/images/hammam.png"
+              alt="Traditional Moroccan hammam spa with dark marble and brass fixtures"
+              class="card-image"
+              width="1024"
+              height="1024"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">The Hammam</h3>
+            <p class="card-desc">Ancient steam rituals, warm marble underfoot, time dissolving in the heat.</p>
+          </div>
+        </article>
+
+        <article class="card js-reveal" aria-label="The Rooftop">
+          <div class="card-image-wrap">
+            <img
+              src="/images/rooftop.png"
+              alt="Rooftop terrace with mint tea set overlooking Marrakech and Atlas Mountains at sunset"
+              class="card-image"
+              width="1024"
+              height="1024"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">The Rooftop</h3>
+            <p class="card-desc">Mint tea as the Atlas Mountains turn gold, the medina humming below.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 3: ARRIVAL ─── -->
+  <section class="arrival js-reveal-block" aria-label="Arrival — Book your stay">
+    <div class="arrival-inner">
+      <div class="divider-line divider-line--clay arrival-line"></div>
+      <h2 class="arrival-heading">Your room awaits.</h2>
+      <address class="arrival-address">
+        <span>7 Derb Sidi Ahmed, Riad Zellij</span>
+        <span>Medina, Marrakech 40030</span>
+        <a href="tel:+212524387200" class="arrival-phone">+212 524 38 72 00</a>
+      </address>
+      <p class="arrival-details">Airport transfer included · Mint tea on arrival</p>
+      <button class="cta-btn" type="button">Reserve Your Stay</button>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="site-footer">
+    <p class="footer-copy">© 2026 Riad Zellij · Marrakech</p>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
